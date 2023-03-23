@@ -14,7 +14,7 @@ api = Blueprint('api', __name__)
 
 
 
-@api.route('/hello', methods=['POST', 'GET'])
+@api.route('/token', methods=['POST'])
 def generate_token():
     email = request.json.get('email', None)
     password = request.json.get('password', None)
