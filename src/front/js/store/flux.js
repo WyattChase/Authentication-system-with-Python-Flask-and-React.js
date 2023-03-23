@@ -21,6 +21,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+			syncTokenFromSessionStore: () => {
+				const token = sessionStorage.getItem("token");
+				if (token && token !="" && token != undefined) setStore({ token: token });
+
+			},
+
 			login: async (email, password) => {
 				const opts = {
 					method: 'POST',
